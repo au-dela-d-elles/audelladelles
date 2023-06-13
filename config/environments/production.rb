@@ -38,7 +38,8 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Accel-Redirect" # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  require "google/cloud/storage"
+  config.active_storage.service = :google
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
@@ -87,6 +88,16 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+  
+  ActionMailer::Base.smtp_settings = {
+    :user_name => ENV['MAILJET_LOGIN'],
+    :password => ENV['MAILJET_PWD'],
+    :domain => 'aud',
+    :address => 'audeladelles.fly.dev/',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
