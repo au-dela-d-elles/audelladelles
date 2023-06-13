@@ -76,6 +76,7 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+gem "google-cloud-storage"
 
 gem "dockerfile-rails", ">= 1.4", :group => :development
 
