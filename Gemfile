@@ -78,4 +78,10 @@ end
 gem "devise", "~> 4.9"
 
 gem "dockerfile-rails", ">= 1.4", :group => :development
+
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 gem 'dotenv-rails'
+
