@@ -24,20 +24,17 @@
           <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0">Boutique</a>
         </li>
         <li>
-          <% if user_signed_in? %>
-            <%= link_to "Deconnexion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: 'block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0' %>
-          <% else %>
-            <div class="flex">
-              <a href="<%= new_user_registration_path %>" class="block py-2 pl-3 pr-1 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0">Inscription</a>
-              <span class="w-8"></span>
-              <a href="<%= new_user_session_path %>" class="block py-2 pl-1 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0">Connexion</a>
-            </div>
-          <% end %>
+          <button type="button" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm px-4 py-2 mt-4 text-center mr-3 md:mr-0 md:mt-0">Donation</button>
         </li>
         <li>
-          <button type="button" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm px-4 py-2 mt-4 text-center mr-3 md:mr-0 md:mt-0">Donation</button>
+          <% if user_signed_in? %>
+            <%= button_to "Deconnexion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm px-4 py-2 mt-4 text-center mr-3 md:mr-0 md:mt-0" %>
+          <% else %>
+            <%= button_to "Mon compte", new_user_session_path, method: :get, class: "text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm px-4 py-2 mt-4 text-center mr-3 md:mr-0 md:mt-0" %>
+          <% end %>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
