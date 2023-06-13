@@ -28,12 +28,6 @@ body {
   flex-direction: column;
 }
 
-li {
-  list-style: none;
-}
- a{
-   text-decoration: none;
- }
 
 .content {
   flex-grow: 1;
