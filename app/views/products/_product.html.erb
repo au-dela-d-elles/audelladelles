@@ -14,10 +14,11 @@
     <%= product.price %>
   </p>
 
- <p class="my-5">
+<p class="my-5">
   <strong class="block font-medium mb-1">PAYMENT:</strong>
-  <%= button_to "Buy now #{number_to_currency(@total_price, unit: "€")}", checkout_create_path(total: @total_price), class: "btn btn-primary", data: {turbo: false} %>
+  <%= button_to "Buy now #{number_to_currency(product.price, unit: "€")}", checkout_create_path(product_id: product.id), class: "btn btn-primary", data: { turbo: false } %>
 </p>
+
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Image:</strong>
