@@ -15,16 +15,18 @@
           <a href="<%= root_path %>" class="block py-2 pl-3 pr-4 text-white bg-amber-500 rounded md:bg-transparent md:text-amber-500 md:p-0" aria-current="page">Home</a>
         </li>
         <li>
-          <a href="<%= static_pages_Notre_histoire_path %>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0">Notre histoire</a>
+          <a href="<%= static_pages_Notre_histoire_path %>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:text-amber-500 md:p-0">Notre histoire</a>
         </li>
         <li>
-          <a href="<%= static_pages_Nos_partenaires_path %>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0">Nos partenaires</a>
+          <a href="<%= static_pages_Nos_partenaires_path %>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:text-amber-500 md:p-0">Nos partenaires</a>
         </li>
         <li>
-          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-amber-500 md:p-0">Boutique</a>
+          <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 hover:text-amber-500 md:hover:bg-transparent md:border-0  md:p-0">Boutique</a>
         </li>
         <li>
-          <button type="button" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm px-4 py-2 mt-4 text-center mr-3 md:mr-0 md:mt-0">Donation</button>
+          <a href="https://www.gofundme.com/f/trekin-gazelle-audela-du-cancer/donate?utm_medium=referral&utm_source=widget&utm_campaign=p_cp%2Bshare-sheet" target="_blank" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-400 font-medium rounded-lg text-sm px-4 py-2 mt-4 text-center mr-3 md:mr-0 md:mt-0 btn">
+            Donation
+          </a>
         </li>
         <li>
           <% if user_signed_in? %>
@@ -37,4 +39,5 @@
     </div>
   </div>
 </nav>
+
 
