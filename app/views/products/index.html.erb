@@ -12,3 +12,7 @@
     <%= render @products %>
   </div>
 </div>
+
+<% total_price = @products.sum(:price) %>
+
+<%= button_to "Passer commande (#{number_to_currency(total_price, unit: "€")})", checkout_create_path(total: total_price), class: "btn btn-primary", data: {turbo: false} %>

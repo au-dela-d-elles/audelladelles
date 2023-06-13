@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @products = Product.all
+    @total_price = Product.sum(:price)
   end
 
   # GET /products/1 or /products/1.json
