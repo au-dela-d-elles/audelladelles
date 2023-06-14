@@ -77,6 +77,8 @@ end
 
 gem "devise", "~> 4.9"
 gem "google-cloud-storage"
+gem 'openssl'
+gem 'base64'
 
 gem "dockerfile-rails", ">= 1.4", :group => :development
 
