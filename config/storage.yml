@@ -16,7 +16,7 @@ local:
 
 # Remember not to checkin your GCS keyfile to a repository
 google:
-  service: GCS
+  service: GCS 
   project: AuDelaDelles
   credentials:
     type: "service_account"
