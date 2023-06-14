@@ -4,7 +4,7 @@
 
 À propos du projet
 
-Nous sommes ravis de présenter ce projet créé avec enthousiasme par Jean-Baptiste Faria, Mathieu Strosberg et William Doré. Notre objectif est de soutenir une noble cause et de contribuer à une association formidable qui œuvre inlassablement pour faire une différence dans la vie des personnes.
+Nous sommes ravis de présenter ce projet créé avec enthousiasme par Jean-Baptiste Faria, Mathieu Strosberg et William Doré. Notre objectif est de soutenir une noble cause et de contribuer à une association formidable qui œuvre inlassablement pour faire une différence dans la vie des personnes touches par le cancer.
 Soutenez-les en visitant notre site et en faisant un don. Ensemble, faisons une différence.
 
 # Contribuer
@@ -84,4 +84,4 @@ Munissez-vous des identifiants administrateurs (identifiant : isadmin@admin.com,
 
 Ce projet est sous licence [MIT](https://choosealicense.com/licenses/mit/). Pour plus d'informations, consultez le fichier LICENSE.
 
-Votre générosité et la visibilité que vous apportez au site nous aident à poursuivre notre mission et à apporter du réconfort et du bonheur aux personnes. Merci pour votre soutien précieux !
+Votre générosité et la visibilité que vous apportez au site nous aident à poursuivre notre mission et à apporter du réconfort et du bonheur aux personnes touchées par le cancer. Merci pour votre soutien précieux !
