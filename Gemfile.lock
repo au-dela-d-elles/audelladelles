@@ -288,6 +288,7 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    stripe (8.5.0)
     tailwindcss-rails (2.0.29-arm64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.29-x86_64-darwin)
@@ -348,6 +349,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  stripe (~> 8.5)
   tailwindcss-rails
   turbo-rails
   tzinfo-data
@@ -358,4 +360,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.4.12
+   2.4.13
