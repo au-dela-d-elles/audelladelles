@@ -19,7 +19,6 @@ local:
 google:
   service: GCS
   project: AuDelaDelles
-  credentials: <%= Rails.root.join("config/secrets/gcs_id.json") %>
   bucket: "imageitems-<%= Rails.env %>"
 
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
