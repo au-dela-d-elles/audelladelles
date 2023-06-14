@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'cart/show'
   resources :products
  
   root 'static_pages#Home'
