@@ -12,7 +12,14 @@
     <%= render @products %>
   </div>
 </div>
-
+<br/>
+<br/>
+<%# 
 <% total_price = @products.sum(:price) %>
+<%# <%= button_to "Passer commande (#{number_to_currency(total_price, unit: "€")})", checkout_create_path(total: total_price), class: "btn btn-primary", data: {turbo: false} %>
+ <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+  Voir mon panier
+</a>
+<br>
+<br>
 
-<%= button_to "Passer commande (#{number_to_currency(total_price, unit: "€")})", checkout_create_path(total: total_price), class: "btn btn-primary", data: {turbo: false} %>
