@@ -26,6 +26,7 @@ Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter
 - [@Mathieu](https://www.github.com/mathieustroberg)
 - [@William](https://www.github.com/williamdore)
 - [@Olivier](https://www.github.com/Rochaya)
+- [@Aurelien](https://www.github.com/aureldpz)
 
 # Installation
 
