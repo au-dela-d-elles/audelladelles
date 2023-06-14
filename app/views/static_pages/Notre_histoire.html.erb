@@ -3,3 +3,76 @@
     <h1 class="mb-4 text-4xl font-bold tracking-tight leading-none text-gray-900 lg:mb-6 md:text-5xl xl:text-6xl dark:text-white">Notre histoire</h1>
   </div>
 </section>
+
+<div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4 flex-col mx-auto">
+  <section class="bg-white">
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+      <img class="w-full dark:hidden" src="<%= asset_path('profil_1.png') %>" alt="dashboard image">
+      <img class="w-full hidden dark:block" src="<%= asset_path('profil_1.png') %>" alt="dashboard image">
+      <div class="mt-4 md:mt-0">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Maud-Charlotte, 41 ans</h2>
+        <p class="mb-6 font-light text-gray-900 md:text-lg">Atteinte d’un cancer du sein en 2021, j’ai besoin plus que tout d’un retour aux sources et de me sentir vivante en partageant une aventure incroyable ! J’entraine avec moi 2 amies pour vivre une belle expérience au féminin et prouver que la maladie ne nous a pas enlevé cette force et que bien au contraire, elle nous pousse à nous surpasser.
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+      <div class="mt-4 md:mt-0">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Justine, 24 ans</h2>
+        <p class="mb-6 font-light text-gray-900 md:text-lg">Concernée indirectement par le cancer, j’ai accompagné mes parents dans leurs maladies. Aujourd’hui je souhaite leur rendre hommage à travers ce trek et soutenir deux femmes également touchées par la maladie afin de continuer à aider une cause qui me tient à cœur et prouver que l’on peut aller au-delà du cancer !
+      </div>
+      <img class="w-full dark:hidden" src="<%= asset_path('profil_2.png') %>" alt="dashboard image">
+      <img class="w-full hidden dark:block" src="<%= asset_path('profil_2.png') %>" alt="dashboard image">
+    </div>
+  </section>
+
+  <section class="bg-white mb-24">
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+      <img class="w-full dark:hidden" src="<%= asset_path('profil_3.png') %>" alt="dashboard image">
+      <img class="w-full hidden dark:block" src="<%= asset_path('profil_3.png') %>" alt="dashboard image">
+      <div class="mt-4 md:mt-0">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Nathalie, 54 ans</h2>
+        <p class="mb-6 font-light text-gray-900 md:text-lg">Après avoir par 2 fois traversé l'épreuve du cancer, j'ai envie de relever le défi d'un trek dans le désert pour me prouver que je peux dans un même temps réaliser un challenge sportif et être utile aux autres. Et malgré toutes les difficultés, la vie est belle.
+      </div>
+    </div>
+  </section>
+  <blockquote class="text-xl italic font-semibold text-gray-900 mb-20 text-center">
+    <svg aria-hidden="true" class="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
+    <p>Soutenues par l’association Au-Delà Du Cancer, les gazelles mettront en place durant une année et demie des actions pour leur permettre de réaliser financièrement cet incroyable défi !</p>
+</blockquote>
+  <h1 class="mt-3 mb-5 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r to-amber-300 from-amber-500 text-center">L'association au delà du cancer</h1>
+  <p class=" mb-6 text-lg text-gray-500 dark:text-gray-900 text-center">
+Créée en septembre 1994, par Madame le Docteur Monique VANBELLE, l’association Au-delà du cancer a pour vocation d’accompagner les personnes atteintes de cancer ou ayant subi cette maladie ainsi que leur entourage, pendant et après les traitements. Elle s’emploie à répondre à des objectifs de sensibilisation, d’accompagnement et d’aide sur le territoire dunkerquois.
+</p>
+  <p class="font-bold mb-6 text-lg text-gray-900 text-center">
+L’association propose des activités de « mieux-être », individuelles et collectives. Les bénévoles formés sont là pour un soutien et une aide de qualité.
+</p>
+
+  <div class="flex flex-wrap justify-center md:flex-row md:flex-wrap md:space-x-4 md:justify-start lg:justify-between mb-4 ">
+    <div class="max-w-sm p-6 mb-4 bg-white border border-gray-200 rounded-lg shadow md:w-auto">
+      <div class="flex justify-center">
+        <img src="<%= asset_path('icon_4.png') %>" class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400 mx-auto" aria-hidden="true" alt="Au delà d'elles Logo" />
+      </div>
+      <h5 class="mb-2 text-2xl font-semibold text-center tracking-tight text-gray-900">Prévenir</h5>
+      <p class="mb-3 font-normal text-center text-gray-900">Sensibiliser à la prévention et au dépistage des cancers</p>
+    </div>
+
+    <div class="max-w-sm p-6 mb-4 bg-white border border-gray-200 rounded-lg shadow md:w-auto">
+      <div class="flex justify-center">
+        <img src="<%= asset_path('icon_5.png') %>" class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" alt="Au delà d'elles Logo" />
+      </div>
+      <h5 class="mb-2 text-2xl font-semibold text-center tracking-tight text-gray-900">Accompagner</h5>
+      <p class="mb-3 font-normal text-center text-gray-900">Accompagner les malades et leur entourage.</p>
+    </div>
+
+    <div class="max-w-sm p-6 mb-4 bg-white border border-gray-200 rounded-lg shadow md:w-auto">
+      <div class="flex justify-center">
+        <img src="<%= asset_path('icon_6.png') %>" class="w-10 h-10 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" alt="Au delà d'elles Logo" />
+      </div>
+      <h5 class="mb-2 text-2xl font-semibold text-center tracking-tight text-gray-900">Réaliser</h5>
+      <p class="mb-3 font-normal text-center text-gray-900">Permettre aux malades la réalisation de défis sportifs et rêves.</p>
+    </div>
+  </div>
+    </div>
+</div>
