@@ -9,7 +9,7 @@ Soutenez-les en visitant notre site et en faisant un don. Ensemble, faisons une 
 
 # Contribuer
 
-Nous sommes ravis de recevoir des contributions pour améliorer notre site de vente de photos de chat. Si vous souhaitez contribuer, veuillez suivre les étapes suivantes :
+Nous sommes ravis de recevoir des contributions pour améliorer notre site pour soutenir au-delà d'elles. Si vous souhaitez contribuer, veuillez suivre les étapes suivantes :
 
 Forker le repository
 Créez une nouvelle branche pour vos modifications : git checkout -b ma-nouvelle-fonctionnalite
