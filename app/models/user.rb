@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_many :orderables
   has_one :cart
   
   devise :database_authenticatable, :registerable,
