@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @total_price = Product.sum(:price)
-    @cart = current_user.cart || Cart.create(user: current_user)
   end
 
   # GET /products/1 or /products/1.json
