@@ -49,6 +49,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_122311) do
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
+  create_table "items", force: :cascade do |t|
+    t.string "image"
+    t.string "name"
+    t.text "description"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "orderables", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.bigint "cart_id", null: false
@@ -68,8 +77,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_122311) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "cart_id"
-    t.index ["cart_id"], name: "index_products_on_cart_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -96,5 +103,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_122311) do
   add_foreign_key "orderables", "carts"
   add_foreign_key "orderables", "products"
   add_foreign_key "orderables", "users"
-  add_foreign_key "products", "carts"
 end

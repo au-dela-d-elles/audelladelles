@@ -5,7 +5,7 @@
                 <img src="<%= asset_path('logo.png') %>" class="md:h-32 h-20" alt="Au delà d'elles Logo" />
             </a>
 
-            <div class="flex items-center lg:order-2">
+            <div class="flex items-center lg:order-2 justify-end">
                 <% if user_signed_in? %>
                     <%= button_to "Deconnexion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm  lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" %>
                 <% else %>
