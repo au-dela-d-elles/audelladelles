@@ -5,10 +5,13 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @total_price = Product.sum(:price)
+    @cart = current_user.cart || Cart.create(user: current_user)
   end
 
   # GET /products/1 or /products/1.json
   def show
+    @product = Product.find(params[:id])
+    @cart = current_user.cart || Cart.new
   end
 
   # GET /products/new
@@ -23,7 +26,8 @@ class ProductsController < ApplicationController
   # POST /products or /products.json
   def create
     @product = Product.new(product_params)
-    
+    @product.cart = current_user.cart
+  
     respond_to do |format|
       if @product.save
         format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
@@ -34,6 +38,7 @@ class ProductsController < ApplicationController
       end
     end
   end
+  
 
   # PATCH/PUT /products/1 or /products/1.json
   def update

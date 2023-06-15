@@ -1,29 +1,20 @@
-<div id="<%= dom_id product %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= product.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Price:</strong>
-    <%= product.price %>
-  </p>
-
-  <div>
-    <%= image_tag(product.image) %>
+<div id="<%= dom_id(product) %>" class="w-96 bg-white rounded-lg shadow-md p-6">
+  <p class="my-5 text-xl font-medium"><%= product.name %></p>
+  <p class="my-5"><strong class="block font-medium">Description:</strong> <%= product.description %></p>
+  <p class="my-5"><strong class="block font-medium">Price:</strong> <%= product.price %></p>
+  <div class="my-5">
+    <%= turbo_frame_tag dom_id(product) do %>
+      <%= form_with(url: cart_add_path, class: "flex items-center", data: { turbo_action: "submit", turbo_frame: "cart" }) do |f| %>
+        <%= f.hidden_field :product_id, value: product.id %>
+        <%= f.number_field :quantity, value: 0, min: 1, class: "w-16 mr-2 rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500" %>
+        <%= f.submit "Add to cart", class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
   </div>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">PAYMENT:</strong>
+  <div class="my-5">
+    <strong class="block font-medium">PAYMENT:</strong>
     <%= button_to "Buy now #{number_to_currency(product.price, unit: "€")}", checkout_create_path(product_id: product.id), class: "btn btn-primary", data: { turbo: false } %>
-  </p>
-  
-
+  </div>
   <% if action_name != "show" %>
     <%= link_to "Show this product", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this product', edit_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
