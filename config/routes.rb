@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get 'cart/show'
+  post 'cart/udapte'
+  post 'cart/destroy'
+
   resources :products
  
   root 'static_pages#Home'
