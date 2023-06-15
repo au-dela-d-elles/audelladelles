@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
+    base64 (0.1.1)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -193,10 +194,11 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.2-x86_64-darwin)
+    nokogiri (1.15.2-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
+    openssl (3.1.0)
     orm_adapter (0.5.0)
     os (1.1.4)
     pg (1.5.3)
@@ -287,7 +289,7 @@ GEM
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     stripe (8.5.0)
-    tailwindcss-rails (2.0.29-x86_64-darwin)
+    tailwindcss-rails (2.0.29-arm64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.29-x86_64-linux)
       railties (>= 6.0.0)
@@ -322,10 +324,11 @@ GEM
     zeitwerk (2.6.8)
 
 PLATFORMS
-  x86_64-darwin-22
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
+  base64
   bootsnap
   capybara
   debug
@@ -337,6 +340,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   letter_opener
+  openssl
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.5)

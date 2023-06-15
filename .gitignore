@@ -6,7 +6,7 @@
 
 #Ignore GSC Keyfile
 #gsc.keyfile
-
+.env
 
 # Ignore bundler config.
 /.bundle
