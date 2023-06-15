@@ -17,6 +17,8 @@
   <div>
     <% if product.present? && product.image.present? %>
       <%= image_tag(product.image) %>
+    <% else %>
+      <img src="app/assets/images/error_placeholder.webp" alt="error while loading the picture">
     <% end %>
   </div>
 
