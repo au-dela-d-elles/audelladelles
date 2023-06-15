@@ -1,0 +1,8 @@
+<div id="<%= dom_id(@cart) %>" class="w-96 bg-white rounded-lg shadow-md p-6">
+  <% if cart.orderables.any? %>
+    <%= render partial: 'cart/orderables', locals: { orderables: cart.orderables } %>
+    <p>Total: <%= cart.total %>€</p>
+  <% else %>
+    <p>Votre panier est vide.</p>
+  <% end %>
+</div>
