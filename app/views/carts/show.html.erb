@@ -1,0 +1,40 @@
+<div class="container mx-auto">
+  <h1 class="text-2xl font-bold my-4">Mon panier</h1>
+  <div class="flex justify-center">
+    <div class="w-8/12">
+      <table class="table w-full">
+        <thead>
+          <tr>
+            <th scope="col" class="px-4 py-2">Quantité</th>
+            <th scope="col" class="px-4 py-2">Nom de produit</th>
+            <th scope="col" class="px-4 py-2">Prix unitaire</th>
+            <th scope="col" class="px-4 py-2">Prix selon quantité</th>
+            <th scope="col" class="px-4 py-2"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% total_price = [] %>
+          <% @items_in_cart.each do |item| %>
+            <tr>
+              <td class="px-4 py-2"><%= item.quantity %></td>
+              <td class="px-4 py-2"><%= item.item.name %></td>
+              <td class="px-4 py-2"><%= item.item.price %>€</td>
+              <td class="px-4 py-2"><%= total_item = item.item.price * item.quantity.to_d %>€</td>
+              <% total_price << total_item %>
+              <td class="px-4 py-2">
+                <%= button_to "Supprimer l'article", item, method: :delete, data: { confirm: 'Êtes-vous sûr de vouloir supprimer cet article ?' }, class: 'bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded' %>
+              </td>
+            </tr>
+          <% end %>
+          <tr>
+            <td class="px-4 py-2"></td>
+            <td class="px-4 py-2"></td>
+            <td class="font-bold px-4 py-2">Prix total:</td>
+            <td class="font-bold px-4 py-2"><%= total_price.inject(0) { |sum, x| sum + x } %>€</td>
+            <td class="px-4 py-2"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

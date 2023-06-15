@@ -162,6 +162,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jquery (0.0.1)
     jwt (2.7.1)
     launchy (2.5.2)
       addressable (~> 2.8)
@@ -344,6 +345,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  jquery (~> 0.0.1)
   letter_opener
   openssl
   pg (~> 1.1)
@@ -364,4 +366,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.4.12
+   2.4.13

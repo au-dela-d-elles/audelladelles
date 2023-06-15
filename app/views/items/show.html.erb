@@ -1,0 +1,14 @@
+<div class="container">
+    <h1 class="text-3xl font-bold mb-6"><%= @item.name %></h1>
+    
+    <h4 class="text-lg font-semibold mb-2">Description de l'article :</h4>
+    <p class="mb-6"><%= @item.description %></p>
+    
+    <p class="text-lg">Prix : <%= @item.price %>€</p>
+    
+    <a href="<%= edit_item_path %>" class="btn btn-warning inline-block mt-4 px-4 py-2 rounded-md font-semibold text-white bg-yellow-500 hover:bg-yellow-600">Modifier</a>
+
+    <%= button_to "Supprimer l'article", item_path(@item.id), method: :delete, class: 'btn btn-danger' %>
+
+    <a href="<%= items_path %>" class="btn btn-secondary inline-block mt-4 px-4 py-2 rounded-md font-semibold text-white bg-gray-500 hover:bg-gray-600">Retourner à la boutique</a>
+</div>
