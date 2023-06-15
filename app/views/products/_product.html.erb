@@ -15,7 +15,9 @@
   </p>
 
   <div>
-    <%= image_tag(product.image) %>
+    <% if product.present? && product.image.present? %>
+      <%= image_tag(product.image) %>
+    <% end %>
   </div>
 
   <p class="my-5">
