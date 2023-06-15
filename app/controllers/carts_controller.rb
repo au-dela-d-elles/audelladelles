@@ -5,7 +5,8 @@ class CartsController < ApplicationController
 
   def show
     @cart = current_user.cart
-    @items_in_cart = Order.where(cart_id:current_user.cart.id)
+    @items_in_cart = Order.where(cart_id: current_user.cart.id)
+    @total_price = calculate_total_price(@items_in_cart)
   end
 
   def create

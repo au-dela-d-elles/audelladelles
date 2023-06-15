@@ -5,6 +5,10 @@ module CartsHelper
     end
   end
 
+  def calculate_total_price(items)
+    items.sum { |item| item.quantity * item.item.price }
+  end
+
   private
   
   def require_login

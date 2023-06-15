@@ -89,4 +89,3 @@ end
 gem 'dotenv-rails'
 gem "stripe", "~> 8.5"
 
-gem "jquery", "~> 0.0.1"
