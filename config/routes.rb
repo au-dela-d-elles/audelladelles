@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'cart/show'
-  post 'cart/udapte'
-  post 'cart/destroy'
+  get 'cart', to: 'cart#show'
+  post 'cart/add', to: 'cart#add', as: 'cart_add'
+  post 'cart/remove', to: 'cart#remove', as: 'cart_remove'
 
   resources :products
  
