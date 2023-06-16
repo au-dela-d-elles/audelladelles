@@ -8,23 +8,18 @@
             <label class="block text-gray-700 font-bold mb-2" for="item_name">Nom de l'article</label>
             <%= f.text_field :name, id: 'item_name', class: 'form-input' %>
         </div>
-
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" for="item_description">Description de l'article</label>
             <%= f.text_area :description, id: 'item_description', class: 'form-textarea' %>
         </div>
-
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" for="item_price">Prix de l'article</label>
             <%= f.number_field :price, step: 0.01, id: 'item_price', class: 'form-input' %>
         </div>
-
         <div class="mb-6">
             <button type="submit" class="px-4 py-2 rounded-md font-semibold text-white bg-green-500 hover:bg-green-600">Modifier l'article</button>
         </div>
-
         <br/>
-
         <a href="<%= items_path %>" class="px-4 py-2 rounded-md font-semibold text-white bg-gray-500 hover:bg-gray-600">Retourner à la boutique</a>
         <a href="<%= item_path(@item.id) %>" class="px-4 py-2 rounded-md font-semibold text-white bg-gray-500 hover:bg-gray-600">Retourner sur l'article</a>
     <% end %>
