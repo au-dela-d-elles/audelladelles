@@ -1,26 +1,42 @@
-<div class="container">
-    <br/>
-    <h1 class="text-3xl font-bold mb-6">Modifier l'article</h1>
-    <br/>
-    <br/>
-    <%= form_for @item do |f| %>
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="item_name">Nom de l'article</label>
-            <%= f.text_field :name, id: 'item_name', class: 'form-input' %>
+<section class="bg-white">
+  <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+    <h2 class="mb-4 text-xl font-bold text-gray-900">Modifier un produit</h2>
+    <%= form_for @item, html: { class: 'space-y-4' } do |f| %>
+      <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+        <div class="sm:col-span-2">
+          <%= f.label :name, class: 'block mb-2 text-sm font-medium text-gray-900' %>
+          <%= f.text_field :name, id: 'item_name', class: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5' %>
         </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="item_description">Description de l'article</label>
-            <%= f.text_area :description, id: 'item_description', class: 'form-textarea' %>
+        <div class="w-full">
+          <%= f.label :image, class: 'block mb-2 text-sm font-medium text-gray-900' %>
+          <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+              <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+              </svg>
+              <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Cliquez pour télécharger</span> ou glisser-déposer</p>
+              <p class="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+            </div>
+            <%= f.file_field :image, id: 'dropzone-file', class: 'hidden' %>
+          </label>
         </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="item_price">Prix de l'article</label>
-            <%= f.number_field :price, step: 0.01, id: 'item_price', class: 'form-input' %>
+        <div class="w-full">
+          <%= f.label :price, class: 'block mb-2 text-sm font-medium text-gray-900' %>
+          <%= f.number_field :price, step: 0.01, class: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5', placeholder: '50€', required: true %>
         </div>
-        <div class="mb-6">
-            <button type="submit" class="px-4 py-2 rounded-md font-semibold text-white bg-green-500 hover:bg-green-600">Modifier l'article</button>
+        <div class="sm:col-span-2">
+          <%= f.label :description, class: 'block mb-2 text-sm font-medium text-gray-900' %>
+          <%= f.text_area :description, class: 'block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500', rows: 8, placeholder: 'Ajouter la description du produit' %>
         </div>
-        <br/>
-        <a href="<%= items_path %>" class="px-4 py-2 rounded-md font-semibold text-white bg-gray-500 hover:bg-gray-600">Retourner à la boutique</a>
-        <a href="<%= item_path(@item.id) %>" class="px-4 py-2 rounded-md font-semibold text-white bg-gray-500 hover:bg-gray-600">Retourner sur l'article</a>
+      </div>
+              <div class="mb-6">
+            <button type="submit" class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-amber-500 rounded-lg focus:ring-4 focus:ring-primary-200 hover:bg-amber-600">Modifier le produit</button>
+        </div>
+      
     <% end %>
-</div>
+  </div>
+</section>
+
+
+
+
