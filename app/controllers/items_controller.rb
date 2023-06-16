@@ -19,11 +19,13 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.cart = current_user.cart 
-    if @item.save
-      redirect_to item_path(@item), notice: 'L\'article a été créé avec succès.'
-    else
-      render :new
+    if current_user && current_user.cart
+      @item.cart = current_user.cart 
+      if @item.save
+        redirect_to item_path(@item), notice: 'L\'article a été créé avec succès.'
+      else
+        render :new
+      end
     end
   end
 
@@ -53,3 +55,4 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :price)
   end
 end
+
