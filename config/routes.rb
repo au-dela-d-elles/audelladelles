@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :items
   
   root 'static_pages#Home'
-
+  
   get 'static_pages/Contact'
+  post 'static_pages/Contact', to: 'contacts#create', as: 'contact_submit'
   get 'static_pages/Notre_histoire'
   get 'static_pages/Nos_partenaires'
 
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
     get 'success', to: 'checkout#success', as: 'checkout_success'
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
   end
-end
+
+  end
  
 
