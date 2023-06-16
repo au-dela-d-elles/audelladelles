@@ -4,7 +4,7 @@
 
 À propos du projet
 
-Nous sommes ravis de présenter ce projet créé avec enthousiasme par Jean-Baptiste Faria, Mathieu Strosberg et William Doré. Notre objectif est de soutenir une noble cause et de contribuer à une association formidable qui œuvre inlassablement pour faire une différence dans la vie des personnes touches par le cancer.
+Nous sommes ravis de présenter ce projet créé avec enthousiasme par Jean-Baptiste, Mathieu, William, Olivier et Aurelien . Notre objectif est de soutenir une noble cause et de contribuer à une association formidable qui œuvre inlassablement pour faire une différence dans la vie des personnes touches par le cancer.
 Soutenez-les en visitant notre site et en faisant un don. Ensemble, faisons une différence.
 
 # Contribuer
