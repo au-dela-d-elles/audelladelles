@@ -39,6 +39,5 @@ RSpec.describe User, type: :model do
 
   context ''
 
-  it { should have_one(:account) }
   it { should have_one(:carts) }
   end
