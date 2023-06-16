@@ -96,3 +96,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_15_210843) do
   add_foreign_key "orders", "carts"
   add_foreign_key "orders", "items"
 end
+
