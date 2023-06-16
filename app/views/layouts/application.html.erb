@@ -9,23 +9,17 @@
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.turbo.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
   <%= javascript_importmap_tags %>
 </head>
 
 <body>
   <%= render partial: "layouts/nav"%> 
-   
   <div class="content">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </div>
-
   <%= render partial: "layouts/footer"%>
-  
-
 </body>
 </html>
