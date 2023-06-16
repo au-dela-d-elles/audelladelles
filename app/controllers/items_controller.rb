@@ -11,6 +11,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @order_cart = Order.new
   end
 
   def new
