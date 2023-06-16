@@ -13,12 +13,12 @@
 
         <% if current_user %>
           <%= link_to "Mon panier", cart_path(current_user.cart.id), class: "text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" %>
-          <% if @items_in_cart.count > 0 %>
-            <% total_items = []
-            @items_in_cart.each do |item_choosed|
-              item_quantity = item_choosed.quantity
-              total_items << item_quantity if item_quantity.present?
-            end %>
+          <% if @items_in_cart.present? && @items_in_cart.count > 0 %>
+            <% total_items = [] %>
+            <% @items_in_cart.each do |item_choosed| %>
+              <% item_quantity = item_choosed.quantity %>
+              <% total_items << item_quantity if item_quantity.present? %>
+            <% end %>
             <% if @items_in_cart.count > 0 %>
               <span class="bg-blue-500 text-white px-2 py-1 rounded-lg text-sm"><%= total_items.compact.sum %></span>
             <% else %>
@@ -59,4 +59,3 @@
     </div>
   </nav>
 </header>
-
