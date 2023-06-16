@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-    devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :validatable
-    after_create :welcome_send 
+  has_one :cart
+  
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
     validates :first_name, presence: true
     validates :last_name, presence: true
@@ -10,4 +11,5 @@ class User < ApplicationRecord
     def welcome_send
       UserMailer.welcome_email(self).deliver_now
     end
+
 end

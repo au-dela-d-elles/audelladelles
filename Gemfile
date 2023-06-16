@@ -88,3 +88,4 @@ end
 
 gem 'dotenv-rails'
 gem "stripe", "~> 8.5"
+

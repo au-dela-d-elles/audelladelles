@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'cart/show'
-  post 'cart/udapte'
-  post 'cart/destroy'
-
-  resources :products
- 
+  resources :orders, only: [:create, :update, :destroy]
+  resources :carts, except: [:index, :new, :edit]
+  resources :items
+  
   root 'static_pages#Home'
 
   get 'static_pages/Contact'

@@ -1,7 +1,9 @@
 class StaticPagesController < ApplicationController
-  def Home
-  end
 
+  def Home
+    @items_in_cart = current_user.cart.items if current_user
+  end
+    
   def Contact
   end
 

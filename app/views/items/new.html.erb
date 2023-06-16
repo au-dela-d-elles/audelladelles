@@ -1,0 +1,20 @@
+<div class="container">
+    <h1 class="text-3xl font-bold mb-6">Créer un nouvel article</h1>
+    <%= form_for @item, html: { class: 'space-y-4' } do |f| %>
+        <div>
+            <%= f.label :name, class: 'block text-gray-700 font-semibold mb-2' %>
+            <%= f.text_field :name, class: 'form-input' %>
+        </div>
+        <div>
+            <%= f.label :description, class: 'block text-gray-700 font-semibold mb-2' %>
+            <%= f.text_area :description, class: 'form-input' %>
+        </div>
+        <div>
+            <%= f.label :price, class: 'block text-gray-700 font-semibold mb-2' %>
+            <%= f.number_field :price, step: 0.01, class: 'form-input' %>
+        </div>
+        <div>
+            <%= f.submit "Créer l'article", class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+</div>
