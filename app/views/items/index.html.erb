@@ -4,41 +4,41 @@
   </div>
 </section>
 
-<div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4 flex-col mx-auto"> <a href="<%= new_item_path %>" class="text-white inline-flex items-center bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-    <svg class="mr-1 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<div class="max-w-screen-xl flex flex-wrap items-center justify-center mx-auto p-4 flex-col mx-auto">
+  <% if user_signed_in? %>
+    <a href="<%= new_item_path %>" class="text-white inline-flex items-center bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+      <svg class="mr-1 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
-    </svg>
-    Ajouter un produit
-</a></div>
+      </svg>
+      Ajouter un produit
+    </a>
+  <% end %>
+</div>
 
 <div class="max-w-screen-xl flex flex-wrap justify-between p-4 mx-auto">
   <% @items.each do |item| %>
-        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow m-4">
-            <a href="<%= item_path(item.id) %>">
-                <img class="p-8 rounded-t-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="product image" />
-            </a>
-            <div class="px-5 pb-5">
-                <a href="<%= item_path(item.id) %>">
-                    <h5 class="text-xl font-semibold tracking-tight text-gray-900"><%= item.name %></h5>
-                </a>
-                <p class="text-gray-600 mb-2"><%= item.description %></p>
-                <div class="flex items-center justify-between">
-                    <span class="text-3xl font-bold text-gray-900"><%= item.price %>€</span>
-                    <% if user_signed_in? %>
-                        <%= form_for @order_cart do |f| %>
-                            <%= f.hidden_field :item_id, value: item.id %>
-                            <%= f.hidden_field :cart_id, value: current_user.cart.id %>
-                            <button type="submit" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Ajouter au panier</button>
-                        <% end %>
-                    <% else %>
-                        <a href="#" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Ajouter au panier</a>
-                    <% end %>
-                </div>
-            </div>
+    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow m-4">
+      <a href="<%= item_path(item.id) %>">
+        <img class="p-8 rounded-t-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="product image" />
+      </a>
+      <div class="px-5 pb-5">
+        <a href="<%= item_path(item.id) %>">
+          <h5 class="text-xl font-semibold tracking-tight text-gray-900"><%= item.name %></h5>
+        </a>
+        <p class="text-gray-600 mb-2"><%= item.description %></p>
+        <div class="flex items-center justify-between">
+          <span class="text-3xl font-bold text-gray-900"><%= item.price %>€</span>
+          <% if user_signed_in? %>
+            <%= form_for @order_cart do |f| %>
+              <%= f.hidden_field :item_id, value: item.id %>
+              <%= f.hidden_field :cart_id, value: current_user.cart.id %>
+              <button type="submit" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Ajouter au panier</button>
+            <% end %>
+          <% else %>
+            <a href="<%= new_user_session_path %>" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Ajouter au panier</a>
+          <% end %>
         </div>
-        <br/>
-    <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-
-
