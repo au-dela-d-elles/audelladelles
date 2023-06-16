@@ -25,16 +25,15 @@
                                 </svg>
                                 Supprimer l'article
                             <% end %>    
-                        <% else %>
-                            <% if user_signed_in? %>
-                                <%= form_for @order_cart do |f| %>
-                                <%= f.hidden_field :item_id, value: @item.id %>
-                                <%= f.hidden_field :cart_id, value: current_user.cart.id %>
-                                <button type="submit" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Ajouter au panier</button>
-                                <% end %>
-                            <% else %>
-                                <a href="<%= new_user_session_path %>" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Ajouter au panier</a>
                         <% end %>
+                        <% if user_signed_in? %>
+                            <%= form_for @order_cart do |f| %>
+                            <%= f.hidden_field :item_id, value: @item.id %>
+                            <%= f.hidden_field :cart_id, value: current_user.cart.id %>
+                            <button type="submit" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Ajouter au panier</button>
+                            <% end %>
+                        <% else %>
+                            <a href="<%= new_user_session_path %>" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Ajouter au panier</a>
                         <% end %>
                         <a href="<%= items_path %>" class="py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200">
                             Retourner à la boutique
