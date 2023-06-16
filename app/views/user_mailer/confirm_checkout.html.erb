@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h1>Order Confirmation</h1>
+
+  <p>Merci <%= @user.first_name %> pour ta commande</p>
+
+  <h2>Details:</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Prix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p>Prix total : <%= @order.total_price %></p>
+
+  <p>A bientot !</p>

@@ -1,0 +1,13 @@
+Merci <%= @user.first_name %> pour ta commande
+
+Details:
+
+Item      Prix
+------------------
+<% @items.each do |item| %>
+<%= item.name %>      <%= item.price %>
+<% end %>
+
+Prix total : <%= @order.total_price %>
+
+A bientot !
