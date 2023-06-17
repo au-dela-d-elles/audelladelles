@@ -14,7 +14,7 @@
         <% if current_user&.cart %>
           <%= link_to cart_path(current_user.cart.id), class: "text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-5 py-2 lg:py-2.5 mr-8 focus:outline-none relative" do %>
             Mon panier
-            <% if @items_in_cart.present? && @items_in_cart.count > 0 %>
+            <% if @items_in_cart.present? && @items_in_cart.count >= 0 %>
               <% total_items = @items_in_cart.sum(:quantity) %>
               <span class="bg-amber-500 text-white rounded-full px-2 py-1 ml-1 absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 text-xs">
                 <%= total_items %>
