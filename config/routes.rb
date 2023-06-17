@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :users
+      resources :carts
+      resources :items
+      resources :orders
+
+      root to: "users#index"
+    end
+    
   resources :orders, only: [:create, :update, :destroy]
   resources :carts, except: [:index, :new, :edit]
   resources :items
