@@ -89,3 +89,5 @@ end
 gem 'dotenv-rails'
 gem "stripe", "~> 8.5"
 
+
+gem "administrate", "~> 0.18.0"
