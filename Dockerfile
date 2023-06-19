@@ -33,6 +33,7 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
     /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
     rm -rf /tmp/node-build-master
 
+
 # Install application gems
 COPY --link Gemfile Gemfile.lock ./
 RUN bundle install && \
@@ -42,6 +43,7 @@ RUN bundle install && \
 # Install node modules
 COPY --link package.json ./
 RUN npm install
+
 
 # Copy application code
 COPY --link . .

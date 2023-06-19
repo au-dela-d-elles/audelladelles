@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   post 'static_pages/Contact', to: 'contacts#create', as: 'contact_submit'
   get 'static_pages/Notre_histoire'
   get 'static_pages/Nos_partenaires'
+  get 'static_pages/Mention_legal'
+  get 'static_pages/Conditions_generales'
+  get 'static_pages/Cgu'
 
   devise_for :users
 
