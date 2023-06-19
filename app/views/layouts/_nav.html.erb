@@ -14,13 +14,17 @@
         <% if current_user&.cart %>
           <%= link_to cart_path(current_user.cart.id), class: "text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-5 py-2 lg:py-2.5 mr-8 focus:outline-none relative" do %>
             Mon panier
-            <% if @items_in_cart.present? && @items_in_cart.count > 0 %>
+            <% if @items_in_cart.present? && @items_in_cart.count >= 0 %>
               <% total_items = @items_in_cart.sum(:quantity) %>
               <span class="bg-amber-500 text-white rounded-full px-2 py-1 ml-1 absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 text-xs">
                 <%= total_items %>
               </span>
             <% end %>
           <% end %>
+        <% end %>
+
+        <% if current_user&.is_admin %>
+          <%= link_to "Admin Dashboard", admin_users_path, class: "text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" %>
         <% end %>
 
         <a href="https://www.gofundme.com/f/trekin-gazelle-audela-du-cancer/donate?utm_medium=referral&utm_source=widget&utm_campaign=p_cp%2Bshare-sheet" target="_blank" class="text-white bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-amber-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Donation</a>

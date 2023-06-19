@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :users
+      resources :carts
+      resources :items
+      resources :orders
+
+      root to: "users#index"
+    end
+    
   resources :orders, only: [:create, :update, :destroy]
   resources :carts, except: [:index, :new, :edit]
   resources :items
@@ -9,6 +18,9 @@ Rails.application.routes.draw do
   post 'static_pages/Contact', to: 'contacts#create', as: 'contact_submit'
   get 'static_pages/Notre_histoire'
   get 'static_pages/Nos_partenaires'
+  get 'static_pages/Mention_legal'
+  get 'static_pages/Conditions_generales'
+  get 'static_pages/Cgu'
 
   devise_for :users
 
