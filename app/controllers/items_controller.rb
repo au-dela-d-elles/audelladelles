@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.picture.attach(params[:item][:picture])
     if current_user && current_user.cart
       @item.cart = current_user.cart 
       if @item.save
@@ -54,7 +55,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :price)
+    params.require(:item).permit(:name, :description, :price, :picture)
   end
 end
 

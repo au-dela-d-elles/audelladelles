@@ -19,7 +19,11 @@
   <% @items.each do |item| %>
     <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow m-4">
       <a href="<%= item_path(item.id) %>">
-        <img class="p-8 rounded-t-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="product image" />
+        <% if item.picture.attached? %>
+          <%= image_tag item.picture, class:"p-8 rounded-t-lg", alt: "image" %>
+        <% else %>
+          <img class="p-8 rounded-t-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+        <% end %>
       </a>
       <div class="px-5 pb-5">
         <a href="<%= item_path(item.id) %>">
