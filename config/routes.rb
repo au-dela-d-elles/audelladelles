@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   get 'static_pages/Conditions_generales'
   get 'static_pages/Cgu'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+
 
   scope '/checkout' do
     post 'total', to: 'checkout#total', as: 'checkout_total'
