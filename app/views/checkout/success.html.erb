@@ -1,9 +1,13 @@
-<div class="container text-center my-5">
-  <h1>Succès</h1>
-  <p>
+<div class="mt-48 smooth-top container rounded-full w-80 text-center font-bold text-white justify-center mx-auto bg-amber-500 my-5">
+  <h1>Paiement accepté ✅.</h1>
+  <p class="mx-auto">
     Nous avons bien reçu votre paiement de <%= number_to_currency(@payment_intent.amount_received / 100.0, unit: "€", separator: ",", delimiter: "", format: "%n %u") %>.
   </p>
-  <p>
-    Le statut de votre paiement est : <%= @payment_intent.status %>.
-  </p>
+</div>
+
+<div class="container w-80 mx-auto justify-center">
+  <div class="flex justify-center">
+    <%= link_to "Retourner à la boutique.", items_path, class: "smooth-left w-full text-white rounded-full bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-primary-300 font-medium text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none" %>
+    <%= link_to "Retourner à l'accueil.", root_path, class: "bounce-right w-full text-white rounded-full bg-amber-500 hover:bg-amber-600 focus:ring-4 focus:ring-primary-300 font-medium text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none" %>
+  </div>
 </div>

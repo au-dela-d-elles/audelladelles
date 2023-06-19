@@ -25,7 +25,7 @@ class CheckoutController < ApplicationController
     
     # Redirection vers l'URL de la session de paiement Stripe
     redirect_to @session.url, allow_other_host: true
-    checkout_send #envoi email dès que la commande est confirmée
+    #checkout_send #envoi email dès que la commande est confirmée
   end
 
   def success
@@ -40,7 +40,7 @@ class CheckoutController < ApplicationController
 
   private
 
-  def checkout_send
-    UserMailer.confirm_checkout(self).deliver_now
-  end
+  #  def checkout_send
+  #    UserMailer.confirm_checkout(self).deliver_now
+  #  end
 end
