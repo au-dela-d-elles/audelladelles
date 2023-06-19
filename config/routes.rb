@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'static_pages/Nos_partenaires'
   get 'static_pages/Mention_legal'
   get 'static_pages/Conditions_generales'
+  get 'static_pages/Cgu'
 
   devise_for :users
 

@@ -18,4 +18,8 @@ class StaticPagesController < ApplicationController
   
   def Conditions_generales
   end
+
+  def Cgu
+  end
+
 end
