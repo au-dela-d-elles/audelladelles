@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-* {
+ * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -32,3 +32,111 @@ body {
 .content {
   flex-grow: 1;
 }
+
+.gradiant {
+  background: linear-gradient(-45deg, #fbbf6b, #f9b450, #f28a12);
+	background-size: 200% 200%;
+  animation: gradient 11s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/*Animation vue stripe*/
+
+.smooth-top {
+  animation: smooth-top 0.8s both;
+}
+
+@keyframes smooth-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.smooth-left {
+	animation: smooth-left 0.8s both;
+}
+
+@keyframes smooth-left {
+  0% {
+    transform: translateX(-50px);
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.smooth-right {
+	animation: smooth-right 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes smooth-right {
+  0% {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.bounce-right {
+  animation: bounce-right 1.2s both;
+}
+
+@keyframes bounce-right {
+  0% {
+    transform: translateX(600px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(68px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(32px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+}
+/* Fin de l'anim view stripe */
