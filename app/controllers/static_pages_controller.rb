@@ -12,5 +12,10 @@ class StaticPagesController < ApplicationController
 
   def Nos_partenaires
   end
+
+  def Mention_legal
+  end
   
+  def Conditions_generales
+  end
 end
