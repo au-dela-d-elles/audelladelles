@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
 
     def welcome_email(user)
         @user = user 
-        @url  = 'http://monsite.fr/login' 
+        @url  = 'https://audeladelles.fly.dev/' 
         mail(to: @user.email, subject: 'Bienvenue chez nous !', template_name: 'welcome_email') 
     end
 
