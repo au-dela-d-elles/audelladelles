@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>Bonjour <%= @user.first_name %> et bienvenue chez nous !</h1>
-    <p>
-      Tu t'es inscrit sur https://audeladelles.fly.dev/ en utilisant l'e-mail suivant : <%= @user.email %>.
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+</head>
+<body>
+  <section class="mx-auto w-full max-w-md mt-8">
+  <div class="mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <h1 class="mb-6 text-2xl text-amber-500 text-center">
+      Bonjour ! Merci d'avoir rejoint notre aventure !
+    </h1>
+    <p class="text-center">
+      Nous vous confirmons votre inscription sur notre site avec l'e-mail suivant : <strong><%= @user.email %></strong>.
     </p>
-    <p>
-      Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
+    <p class="text-center mt-4">
+      Nous sommes heureux de vous compter parmi nous. Pour accéder à votre espace client, cliquez sur ce lien :
     </p>
-    <p> À très vite sur https://audeladelles.fly.dev/ !
-  </body>
+    <p class="text-center mt-4">
+      <a class="text-amber-500" href="<%= @url %>"><%= @url %></a>
+    </p>
+    <p class="text-center mt-4">
+      À bientôt !
+    </p>
+  </div>
+</section>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.turbo.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+</body>
 </html>
+
