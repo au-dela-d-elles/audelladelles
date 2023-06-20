@@ -33,6 +33,8 @@ body {
   flex-grow: 1;
 }
 
+/************************* ANIM BG TITRES STATICS*************/
+
 .gradiant {
   background: linear-gradient(-45deg, #fbbf6b, #f9b450, #f28a12);
 	background-size: 200% 200%;
@@ -51,7 +53,64 @@ body {
 	}
 }
 
-/*Animation vue stripe*/
+/****************** FIN ANIM BG TITRES STATICS*************/
+
+/*************** SHADOW IMAGE TREK *********************/
+.shdw-css-orange {
+  filter: drop-shadow(0 8px 10px #f9b450);
+}
+
+.shdw-css-black {
+  filter: drop-shadow(0 0 10px #374151);
+}
+
+/********** PARTIE NAVBAR *****************************************/
+
+.nav-css {
+  position: relative;
+}
+
+.nav-css::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: #f9b450; 
+  transform: scaleX(0); 
+  transition: background-color .5s ease, transform .5s ease;
+}
+
+.nav-css:hover::after {
+  background-color: #f9b450;
+  transform: scaleX(.8);
+}
+
+.nav-home {
+  position: relative;
+}
+
+.nav-home::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: #374151; 
+  transform: scaleX(0); 
+  transition: background-color .5s ease, transform .5s ease;
+}
+
+.nav-home:hover::after {
+  background-color: #374151;
+  transform: scaleX(.8);
+}
+
+/************* FIN DE LA PARTIE NAVBAR *********************************/
+
+/************* ANIMATION VUE STRIPE ************************************/
 
 .smooth-top {
   animation: smooth-top 0.8s both;
@@ -139,4 +198,18 @@ body {
     animation-timing-function: ease-out;
   }
 }
-/* Fin de l'anim view stripe */
+
+/********************** FIN ANIMATION VUE STRIPE ****************************************/
+
+
+/************************** MEDIA SCREEN  *******************************************/
+
+@media screen and (max-width: 1023px) {
+  .nav-css:hover::after {
+    transform: scaleX(0);
+  }
+
+  .nav-home:hover::after {
+    transform: scaleX(0);
+  }
+}
