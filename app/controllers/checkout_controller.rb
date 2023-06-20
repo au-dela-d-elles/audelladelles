@@ -34,6 +34,8 @@ class CheckoutController < ApplicationController
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
   end
 
+  
+
   def cancel
     # Action vide pour la page d'annulation du paiement
   end
