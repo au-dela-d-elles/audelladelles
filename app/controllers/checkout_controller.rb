@@ -32,6 +32,7 @@ class CheckoutController < ApplicationController
     # Récupération de la session de paiement et du paiement associé à partir des paramètres
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
+    current_user.cart.orders.destroy_all
   end
 
   
