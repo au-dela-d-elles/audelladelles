@@ -29,6 +29,24 @@ body {
   flex-direction: column;
 }
 
+
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.span-rta {
+  display: inline-block;
+  transition: transform .8s;
+}
+
+a:hover .span-rta {
+  transform: rotate(360deg) scale(1.5);
+}
 .content {
   flex-grow: 1;
 }
