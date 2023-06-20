@@ -1,3 +1,30 @@
-<h3>Email: <%= @email %></h3>
-<h3>Subject: <%= @subject %></h3>
-<p>Message: <%= @message %></p>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+</head>
+<body>
+  <section class="mx-auto mt-8">
+  <div class="mx-auto p-6 border border-gray-300 rounded-lg">
+    <h3 class="mt-2">
+      <span class="font-bold">Email:</span> <%= @email %>
+    </h3>
+    <h3 class="mt-2">
+      <span class="font-bold">Subject:</span> <%= @subject %>
+    </h3>
+    <p class="mt-2 whitespace-wrap">
+      <span class="font-bold">Message:</span> <%= @message %>
+    </p>
+  </div>
+</section>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.turbo.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+</body>
+</html>
+<span class="font-bold"></span>
