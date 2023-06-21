@@ -30,8 +30,11 @@
       <% @items_in_cart.each do |item| %>
         <tr class="bg-white border-b hover:bg-gray-50">
           <td class="w-32 p-4">
-            <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="Items">
-          </td>
+            <% if item.picture.attached? %>
+              <%= image_tag item.picture, alt: "image" %>
+            <% else %>
+              <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+            <% end %>          </td>
           <td class="px-6 py-4 font-semibold text-gray-900">
             <%= item.item.name %>
           </td>
