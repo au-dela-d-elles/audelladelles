@@ -4,30 +4,10 @@
       <div class="w-96 bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-sm xl:p-0">
         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
           <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-            Connectez-vous à votre compte
+            Créez un compte pour bénéficier de tous nos services !
           </h1>
           <%= render "devise/shared/error_messages", resource: resource %>
           <div class="space-y-4 md:space-y-6">
-            <div class="field mb-3">
-              <%= f.label :firstname, class: "block mb-2 text-sm font-medium text-gray-900" %>
-              <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname", id: "firstname", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3", placeholder: "First Name", required: true %>
-            </div>
-            <div class="field mb-3">
-              <%= f.label :lastname, class: "block mb-2 text-sm font-medium text-gray-900" %>
-              <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname", id: "lastname", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3", placeholder: "Last Name", required: true %>
-            </div>
-            <div class="field mb-3">
-              <%= f.label :street, class: "block mb-2 text-sm font-medium text-gray-900" %>
-              <%= f.text_field :street, autofocus: true, autocomplete: "street", id: "street", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3", placeholder: "Street", required: true %>
-            </div>
-            <div class="field mb-3">
-              <%= f.label :city, class: "block mb-2 text-sm font-medium text-gray-900" %>
-              <%= f.text_field :city, autofocus: true, autocomplete: "city", id: "city", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3", placeholder: "City", required: true %>
-            </div>
-            <div class="field mb-3">
-              <%= f.label :zip_code, class: "block mb-2 text-sm font-medium text-gray-900" %>
-              <%= f.text_field :zip_code, autofocus: true, autocomplete: "zip_code", id: "zip_code", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3", placeholder: "ZIP Code", required: true %>
-            </div>
             <div class="field mb-3">
               <%= f.label :email, class: "block mb-2 text-sm font-medium text-gray-900" %>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3", placeholder: "name@email.com", required: true %>
