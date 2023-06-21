@@ -2,6 +2,14 @@ class Order < ApplicationRecord
   belongs_to :item
   belongs_to :cart
 
+  def unit_price
+    item.price
+  end
+
+  def total_price
+    unit_price * quantity
+  end
+
   def self.add_or_create_cart_item_link(permit_link_params)
     @new_item_add = Order.find_by(cart_id: permit_link_params[:cart_id], item_id: permit_link_params[:item_id])
 
