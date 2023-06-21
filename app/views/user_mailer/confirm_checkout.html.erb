@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 </head>
 <body>
-  <h1>Order Confirmation</h1>
-
-  <p>Merci <%= @user.first_name %> pour ta commande</p>
-
-  <h2>Details:</h2>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Item</th>
-        <th>Prix</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @products_in_cart.each do |order| %>
+  <section class="mx-auto w-full max-w-md mt-8">
+  <div class="mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <h1 class="mb-6 text-2xl text-amber-500 text-center">
+      Confirmation de votre commande.
+    </h1>
+    <h2 class="text-center">
+      Detail:
+    </h2>
+    <table class="text-center">
+      <thead>
         <tr>
-          <td><%= order.item.name %></td>
-          <td><%= order.item.price %></td>
+          <th>Item</th>
+          <th>Prix</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @products_in_cart.each do |order| %>
+          <tr>
+            <td><%= order.item.name %></td>
+            <td><%= order.item.price %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <p class="text-center mt-4">
+      Prix total : <%= @order.total_price %>
+    </p>
+    <p class="text-center mt-4">
+      À bientôt !
+    </p>
+  </div>
+</section>
 
-  <p>Prix total : <%= @order.total_price %></p>
 
-  <p>A bientot !</p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.turbo.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+</body>
+</html>
