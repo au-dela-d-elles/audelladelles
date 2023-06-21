@@ -21,7 +21,7 @@ class UserMailer < ApplicationMailer
         @product_prices = @products_in_cart.map(&:unit_price)
         @total_price = calculate_total_price(@products_in_cart)
 
-        mail(to: @user.email, subject: 'Merci pour votre commande', template_name: 'confirm_checkout')
+        mail(to: @user.email, subject: 'Confirmation de votre commande', template_name: 'confirm_checkout')
     end
 
     private 

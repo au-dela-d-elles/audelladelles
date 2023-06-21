@@ -7,34 +7,34 @@
 </head>
 <body>
   <section class="mx-auto w-full max-w-md mt-8">
-  <div class="mx-auto p-6 bg-white shadow-lg rounded-lg">
+  <div class="mx-auto p-6 bg-white shadow-lg rounded-lg justify-center">
     <h1 class="mb-6 text-2xl text-amber-500 text-center">
-      Confirmation de votre commande.
+      Nous sommes heureux de vous confirmer votre commande.
     </h1>
-    <h2 class="text-center">
-      Detail:
+    <h2 class="text-center mt-4">
+      Détails de la commande:
     </h2>
-    <table class="text-center">
+    <table class="mx-auto">
       <thead>
         <tr>
-          <th>Item</th>
-          <th>Prix</th>
+          <th class="pr-4 underline">Produit(s)</th>
+          <th class="underline">Prix</th>
         </tr>
       </thead>
       <tbody>
         <% @products_in_cart.each do |order| %>
           <tr>
-            <td><%= order.item.name %></td>
-            <td><%= order.item.price %></td>
+            <td class="pr-4"><%= order.item.name %></td>
+            <td class="pr-4"><%= order.item.price %>&#8364;</td>
           </tr>
         <% end %>
       </tbody>
     </table>
     <p class="text-center mt-4">
-      Prix total : <%= @order.total_price %>
+      Montant total de la commande: <%= @order.total_price %> &#8364;
     </p>
     <p class="text-center mt-4">
-      À bientôt !
+      Merci beaucoup pour votre contribution et à bientôt sur <a class="text-amber-500" href="">notre site</a> !
     </p>
   </div>
 </section>
