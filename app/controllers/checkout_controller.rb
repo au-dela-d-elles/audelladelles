@@ -24,18 +24,16 @@ class CheckoutController < ApplicationController
     )
     
     # Redirection vers l'URL de la session de paiement Stripe
-    redirect_to @session.url, allow_other_host: true
-    #checkout_send #envoi email dès que la commande est confirmée
+    redirect_to @session.url, allow_other_host: true #envoi email dès que la commande est confirmée
   end
 
   def success
     # Récupération de la session de paiement et du paiement associé à partir des paramètres
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
+    checkout_send
     current_user.cart.orders.destroy_all
   end
-
-  
 
   def cancel
     # Action vide pour la page d'annulation du paiement
@@ -43,7 +41,11 @@ class CheckoutController < ApplicationController
 
   private
 
-  #  def checkout_send
-  #    UserMailer.confirm_checkout(self).deliver_now
-  #  end
+    def cart
+      @cart ||= current_user.cart
+    end
+
+    def checkout_send
+      UserMailer.confirm_checkout(current_user, cart).deliver_now
+    end
 end

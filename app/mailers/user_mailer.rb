@@ -9,8 +9,14 @@ class UserMailer < ApplicationMailer
         mail(to: @user.email, subject: 'Bienvenue chez nous !', template_name: 'welcome_email') 
     end
 
-    def confirm_checkout(user)
+    def cart
+      @cart ||= current_user.cart
+    end
+
+    def confirm_checkout(user, cart)
         @user = user
+        @cart = @user.cart
+        @order = Order.find_by(cart_id: @cart.id)
         @products_in_cart = Order.where(cart_id: @cart.id)
         @product_prices = @products_in_cart.map(&:unit_price)
         @total_price = calculate_total_price(@products_in_cart)
