@@ -16,6 +16,6 @@ class OrdersController < ApplicationController
   private
 
   def permit_link_params
-    params.require(:order).permit(:item_id, :cart_id, :quantity)
+    params.require(:order).permit(:item_id, :cart_id, :quantity, :picture)
   end
 end
