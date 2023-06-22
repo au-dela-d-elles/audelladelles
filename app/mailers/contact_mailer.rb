@@ -1,11 +1,20 @@
 class ContactMailer < ApplicationMailer
-    default to: 'audeladelles@gmail.com'
+    default from: 'hello@mathieustrosberg.com'
   
     def send_contact_email(email, subject, message)
         @email = email
         @subject = subject
         @message = message
-        mail(from: email, subject: @subject, message: @message, email: @email)
+        mail(to: email, subject: @subject, email: @email, message: @message)
     end
-end
   
+    private
+  
+    # def default_sender
+    #   if Rails.env.production?
+    #     'hello@mathieustrosberg.com' # Production email recipient
+    #   else
+    #     'dev-contact@audeladelles.com' # Development email recipient
+    #   end
+    # end
+  end
