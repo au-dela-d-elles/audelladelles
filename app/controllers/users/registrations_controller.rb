@@ -8,7 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def send_account_created_email
-    UserMailer.welcome_email(resource).deliver_now
+    UserMailer.welcome_email(resource).deliver_now if resource.email.present?
   end
 
   # GET /resource/sign_up
