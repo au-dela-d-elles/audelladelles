@@ -29,7 +29,7 @@
         <a href="<%= item_path(item.id) %>">
           <h1 class="text-xl font-semibold tracking-tight text-gray-900"><%= item.name %></h1>
         </a>
-        <p class="text-gray-600 mb-2"><%= item.description %></p>
+        <p class="text-gray-600 mb-2"><%= truncate(item.description, length: 150) %></p>
         <div class="flex items-center justify-between">
           <span class="text-3xl font-bold text-gray-900"><%= item.price %>€</span>
           <% if user_signed_in? %>
