@@ -1,7 +1,6 @@
 class UserMailer < ApplicationMailer
-    default from: 'no-reply@audeladelles.fr'
-    # default from: ENV['MAILJET_NOREPLY_FROM']
-    # default from: ENV['MAILJET_CONTACT_FROM']
+    default from: 'hello@mathieustrosberg.com'
+    # default from: 'no-reply@audeladelles.fr'
 
     def welcome_email(user)
         @user = user 
