@@ -13,13 +13,13 @@
               <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-3", placeholder: "name@email.com", required: true %>
             </div>
             <div class="field mb-3">
-              <%= f.label :password, class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= f.label :password, "Mot de passe", class: "block mb-2 text-sm font-medium text-gray-900" %>
               <% if @minimum_password_length %>
               <% end %>
               <%= f.password_field :password, autocomplete: "new-password", id: "password", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
             </div>
             <div class="field mb-3">
-              <%= f.label :password_confirmation, class: "block mb-2 text-sm font-medium text-gray-900" %>
+              <%= f.label :password_confirmation, "Confirmer votre mot de passe",class: "block mb-2 text-sm font-medium text-gray-900" %>
               <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "password_confirmation", class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
             </div>
             <div class="actions">
