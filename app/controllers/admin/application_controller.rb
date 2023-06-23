@@ -21,7 +21,7 @@ module Admin
       redirect_to root_path, alert: "Accès non autorisé." unless current_user.admin?
     end
 
-    # Override this value to specify the number of elements to display at a time
+    # Override this value to specify the number of elements to display at a time 
     # on index pages. Defaults to 20.
     # def records_per_page
     #   params[:per_page] || 20

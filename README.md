@@ -38,13 +38,9 @@ Assurez-vous d'avoir Ruby et Ruby on Rails installés sur votre machine. Ensuite
 
 `$ bundle install`
 
-`$ rails db:setup `
-
 `$ rails db:create`
 
 `$ rails db:migrate`
-
-`$ rails db:seed`
 
 Démarrage du serveur
 Une fois les dépendances installées et la base de données configurée, vous pouvez démarrer le serveur Rails en utilisant la commande suivante :
