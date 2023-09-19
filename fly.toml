@@ -1,12 +1,17 @@
-# fly.toml app configuration file generated for audeladelles on 2023-06-19T13:39:06+02:00
-
+# fly.toml app configuration file generated for au-dela-delles on 2023-09-19T22:51:18+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "audeladelles"
+app = "au-dela-delles"
 primary_region = "cdg"
 console_command = "/rails/bin/rails console"
+
+[build]
+
+[[mounts]]
+  source = "audeladelles_data"
+  destination = "/data"
 
 [http_service]
   internal_port = 3000
@@ -18,7 +23,3 @@ console_command = "/rails/bin/rails console"
 [[statics]]
   guest_path = "/rails/public"
   url_prefix = "/"
-
-[mounts]
-source="audeladelles_data"
-destination="/data"
