@@ -1,17 +1,13 @@
-# fly.toml app configuration file generated for au-dela-delles on 2023-09-19T22:51:18+02:00
+# fly.toml app configuration file generated for au-della-delle on 2023-09-20T10:17:53+02:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "au-dela-delles"
+app = "au-della-delle"
 primary_region = "cdg"
 console_command = "/rails/bin/rails console"
 
 [build]
-
-[[mounts]]
-  source = "audeladelles_data"
-  destination = "/data"
 
 [http_service]
   internal_port = 3000
@@ -19,6 +15,7 @@ console_command = "/rails/bin/rails console"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
+  processes = ["app"]
 
 [[statics]]
   guest_path = "/rails/public"

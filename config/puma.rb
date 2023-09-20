@@ -40,5 +40,5 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # Autorise Puma à être redémarré par la commande `bin/rails restart`.
 plugin :tmp_restart
 
-# Ajoutez cette ligne pour faire écouter Puma sur 0.0.0.0:3000
-bind "tcp://0.0.0.0:3000"
+
+
