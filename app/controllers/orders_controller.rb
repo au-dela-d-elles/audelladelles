@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   end
 
   private
-# Définit les paramètres autorisés pour la création ou la mise à jour d'un lien (order)
+
   def permit_link_params
     params.require(:order).permit(:item_id, :cart_id, :quantity, :picture)
   end

@@ -1,11 +1,7 @@
 # app/controllers/items_controller.rb
 class ItemsController < ApplicationController
   include ItemsHelper
-  
-  # Enregistrer les articles dans le panier avant d'exécuter les actions du contrôleur
   before_action :save_items_in_cart
-  
-  # Définir l'article avant d'exécuter les actions spécifiées
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -26,11 +22,8 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.picture.attach(params[:item][:picture])
-    
     if current_user && current_user.cart
-      # Assigner le panier de l'utilisateur courant à l'article
-      @item.cart = current_user.cart
-      
+      @item.cart = current_user.cart 
       if @item.save
         redirect_to item_path(@item), notice: 'L\'article a été créé avec succès.'
       else
@@ -58,12 +51,11 @@ class ItemsController < ApplicationController
   private
 
   def set_item
-    # Récupérer l'article spécifié par l'ID
     @item = Item.find(params[:id])
   end
 
   def item_params
-    # Définir les paramètres autorisés pour l'article
     params.require(:item).permit(:name, :description, :price, :picture)
   end
 end
+
